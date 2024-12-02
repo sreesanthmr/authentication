@@ -1,0 +1,98 @@
+{% extends "base.html" %} {%block title%} Login {%endblock%} {%block content%}
+
+<div class="main-container">
+  <div class="login-card">
+    <div class="login-child">
+      <div class="login-heading">
+        <h2>Login with email</h2>
+        <p>Hi, Welcome back</p>
+        <br />
+      </div>
+
+      <a
+        class=""
+        style="
+          color: black;
+          height: 45px;
+          border-radius: 5px;
+          width: 100%;
+          padding: 10px 20px;
+          background-color: rgb(232, 232, 232);
+          text-align: center;
+        "
+        href="{% url 'social:begin' 'google-oauth2' %}?next={% url 'home' %}"
+      >
+        <i class="fa-brands fa-google"></i> Login with Google
+      </a>
+
+      <br />
+
+      <a
+        style="
+          color: black;
+
+          border-radius: 5px;
+          width: 100%;
+          height: 45px;
+          padding: 10px 20px;
+          background-color: rgb(232, 232, 232);
+          text-align: center;
+        "
+        href="{% url 'phone_login' %}"
+      >
+        Continue with phone number
+      </a>
+
+      <br />
+
+      <div class="horizontal-seperations">
+        <div class="horizontal-line"></div>
+        <p class="separator-text">or login with email</p>
+        <div class="horizontal-line"></div>
+      </div>
+
+      <br />
+
+      <form method="POST" action="">
+        {% csrf_token %}
+        <div>
+          <label>Email</label>
+          <br />
+          <input
+            class="input"
+            type="email"
+            name="email"
+            placeholder="Enter Email"
+          />
+        </div>
+        <div>
+          <br />
+          <label>Password</label>
+          <br />
+          <input
+            class="input"
+            type="password"
+            name="password"
+            placeholder="Enter Password"
+          />
+        </div>
+        <!-- <br />
+        <div class="checkbox">
+          <div><input type="checkbox" /> Remember Me</div>
+          <div>
+            <a href="">Forgot Password?</a>
+          </div>
+        </div> -->
+        <br />
+        <input class="submit" type="submit" value="Login" />
+      </form>
+      <div class="register">
+        <br />
+        Not registered yet?
+
+        <a href="{% url 'register' %}">Create an account</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

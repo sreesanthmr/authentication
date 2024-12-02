@@ -1,0 +1,48 @@
+{%extends 'base.html'%} {%block content%}
+<div class="main-container">
+  <div class="login-card">
+    <div class="login-child">
+      <div class="login-heading">
+        <h2>Create an account</h2>
+        <br />
+      </div>
+
+      <form action="" method="POST">
+        {% csrf_token %}
+        <div>{{ form.email.label }} {{ form.email }}</div>
+        <div>
+          <br />
+          {{ form.username.label }} {{ form.username }}
+        </div>
+        <div>
+          <br />
+          {{ form.password1.label }} {{ form.password1 }}
+        </div>
+        <div>
+          <br />
+          {{ form.password2.label }} {{ form.password2 }}
+        </div>
+
+        <div>
+          <br />
+          {{ form.first_name.label }} {{ form.first_name }}
+        </div>
+
+        <div>
+          <br />
+          {{ form.last_name.label }} {{ form.last_name }}
+        </div>
+
+        <br />
+        <input class="submit" type="submit" value="Register" />
+        <br />
+      </form>
+
+      <div class="register">
+        <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{%endblock%}

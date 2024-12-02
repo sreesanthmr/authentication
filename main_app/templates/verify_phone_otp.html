@@ -1,0 +1,25 @@
+{%extends 'base.html'%} {%block content%}
+
+<div class="main-container">
+  <div class="login-card">
+    <div class="login-child">
+      <div>
+        <h2>OTP Verification</h2>
+        <br />
+      </div>
+
+      <form action="" method="POST">
+        {% csrf_token %}
+        <input type="text" placeholder="Enter six-digit code" name="otp"/>
+        <br />
+        <br />
+
+        <input class="submit" type="submit" value="Continue" />
+      </form>
+
+    </div>
+
+  </div>
+</div>
+
+{%endblock%}

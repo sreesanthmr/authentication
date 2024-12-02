@@ -1,0 +1,48 @@
+{%extends 'base.html'%} {%block content%}
+
+<div class="main-container">
+
+    <!-- <div class="login-card">
+        <div class="login-child">
+          <div>
+            <h2>Create an account</h2>
+            <br />
+          </div>
+    
+          <form action="" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <br />
+    
+            <input class="submit" type="submit" value="Register" />
+          </form>
+          
+        </div>
+      </div> -->
+
+  <div class="login-card">
+    <div class="login-child">
+      <div>
+        <h2>Login with phone</h2>
+        <p>If already registered</p>
+        <br />
+      </div>
+
+      <form action="" method="POST">
+        {% csrf_token %}
+        <label>Phone</label>
+        <input type="text" placeholder="Enter Phone Number" name="phone_number"/>
+        <br />
+        <br />
+
+        <input class="submit" type="submit" value="Login" />
+      </form>
+      <div class="register">
+        <br />
+        <p>Not registered yet?<a href="{% url 'phone_number_register' %}">Create an account</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{%endblock%}
